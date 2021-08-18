@@ -1,6 +1,6 @@
 # Euphoria
 A Django based Personal Resume website project. Designed to
-comply with the specifications of ```#track-backend``` level: ```stage 2``` of [Zuri Internship](). View the project here
+comply with the specifications of ```#track-backend``` level: ```stage 2``` of [Zuri Internship](https://internship.zuri.team/). View the project here
 
 ## Features
 * Fully functional contact submission form.
@@ -27,3 +27,8 @@ You can find out about other env vars in [Environmental Variables](##Enviromenta
 - AWS_ACCESS_KEY_ID
 - AWS_SECRET_ACCESS_KEY
 - AWS_STORAGE_BUCKET_NAME
+
+## Your Internship support is priceless
+![Zuri](zuri.jpeg)
+[Zuri Internship](https://internship.zuri.team/)
+![HNG](hng.png)

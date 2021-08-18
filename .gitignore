@@ -2,3 +2,4 @@
 *.pyc
 db.sqlite3
 envars.sh
+media_files
