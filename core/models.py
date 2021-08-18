@@ -178,7 +178,7 @@ class Message(models.Model):
     index page.
     """
     name = models.CharField(max_length=100)
-    email = models.EmailField
+    email = models.EmailField(blank=True)
     subject = models.CharField(max_length=200)
     message = models.TextField()
     sent_at = models.DateTimeField(auto_now_add=True)

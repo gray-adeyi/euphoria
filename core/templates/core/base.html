@@ -41,14 +41,22 @@
   <!-- ======= Mobile nav toggle button ======= -->
   <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-  <div><p class="alert alert-info">Notice: the requested form is implemented in the contacts <a href="#contact" class="scrollto">click here</a> to slide to contacts.</p> You can find the source code of this site on this github repository <a href="https://github.com/gray-adeyi/euphoria.git" target="_blank">here</a></div>
+  <div class="alert alert-info alert-dismissible fade show" role="alert">
+    <strong>Notice!</strong> <p>The requested form is implemented in the contacts <a href="#contact" class="scrollto">click here</a> to slide to contacts. You can find the source code of this site on this github repository <a href="https://github.com/gray-adeyi/euphoria" target="_blank">here</a></p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
   {% if messages %}
   {% for message in messages %}
   {% if message.tags == 'error' %}
-  <p class="alert alert-danger">{{ message.tags }}</p>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>ERROR</strong> {{ message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
   {% endif %}
-  <p class="alert alert-{{ message.tags }}">{{ message }}</p>
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>{{ message.tags | upper }}</strong> {{ message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
   {% endfor %}
   {% endif %}
   <!-- ======= Header ======= -->

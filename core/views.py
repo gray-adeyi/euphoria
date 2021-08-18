@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib import messages
 from django.views.generic import TemplateView
-from django.urls import reverse_lazy
+from django.shortcuts import redirect
 from django.views.generic.edit import FormView
 from . import models
 from . import forms
@@ -13,15 +13,17 @@ from . import forms
 class Index(FormView):
     template_name = 'core/index.html'
     form_class = forms.MessageForm
-    success_url = reverse_lazy('core:index')
+    
     model = models.Message
 
     def form_valid(self, form: forms.MessageForm) -> HttpResponse:
         messages.success(self.request, "Your message has been successfully sent")
-        return super().form_valid(form)
+        form.save()
+        return redirect('core:index')
 
     def form_invalid(self, form: forms.MessageForm) -> HttpResponse:
         messages.error(self.request, "An error occured while trying to deliver your message. please try again")
+        print("Form invalid was hit")
         return super().form_invalid(form)
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
